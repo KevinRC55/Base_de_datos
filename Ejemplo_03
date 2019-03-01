@@ -45,3 +45,48 @@ semestre varchar(6),
 calificacion int,
 primary key (nocuenta,mid,semestre)/*Llave primaria compuesta*/
 );
+
+insert into carrera(carreraid,nombre,division) values
+(1,'Matemticas Aplicadas y Computacion',Matematicas e Ingenieria');
+insert into carrera(carreraid,nombre,division) values
+(2,'Actuaria',Matematicas e Ingenieria');
+insert into carrera(carreraid,nombre,division) values
+(3,'Ingenieria Civil',Matematicas e Ingenieria');
+
+select *from carrera;
+
+insert into alumno(nocuenta,nombre,sexo,cid)values
+(1,'Alejandro Reyes,'M',1);
+insert into alumno(nocuenta,nombre,sexo,cid)values
+(1,'Alejandro Reyes,'M',1);
+insert into alumno(nocuenta,nombre,sexo,cid)values
+(1,'Alejandro Reyes,'M',1);
+
+select *from alumno;
+
+insert into materia (materia 
+
+nsert into curso (nocuenta,mid,semestre,calificacion) values
+();
+
+select *frpm curso;
+
+/*CONSUTAS*/
+
+select a.nocuenta, a.nombre, a.sexo, c.nombre as carrera, c.division
+from alumno a join carrera c on a.cid = c.carreraid;
+
+select a.nocuenta, a.nombre, a.sexo, c.nombre as carrera, c. division
+from alumno a join carreca.c on a.cid = c.carreraid
+where c.nombre = 'Matemticas Aplicadas y Computacion';
+
+select a.nocuenta, a.nombre, a.sexo, c.nombre as carrera, c.division
+from alumno a join carreca c on a.cid = c.carreraid
+where a.sexo = M;
+
+select m.materiaid, m.nombre as materia, m.creditos, c.nombre as carrera,
+c.division from materia m join carrera c on m.cid = c.carreraid;
+
+select m.materiaid, m.nombre as materia, m.creditos, c.nombre as carrera,
+c.division from materia m join carrera c on m.cid = c.carreraid;
+where c.nombre = 'Matemticas Aplicadas y Computacion';
