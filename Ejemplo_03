@@ -1,0 +1,47 @@
+/*
+PRACTICA #3
+
+Relacionar las entidades siguientes
+
+->Carrera
+->Materia
+->Alumno
+
+Asignar dos atributos a cada entidad(Ademas de su llave)
+*/
+
+create database ejemplo_03;
+
+use ejemplo_03;
+
+create table carrera(
+carreraid int primary key,
+nombre varchar(50),
+division varchar(50)
+);
+
+crete table alumno(
+nocuenta int primary key,
+nombre vachar(50),
+sexo char,
+cid int,
+foreign key (cid) references carrera (carreraid)
+);
+
+crete table materia(
+materiaid int primary key,
+nombre varchar(50),
+creditos int,
+cid int
+foreign key (cid) references carrera (careraid)
+);
+
+create table curso(
+nocuenta int,
+foreign key (nocuenta) references alumno (nocuenta),
+mid int,
+foreign key (mid) references materia (materiaid),
+semestre varchar(6),
+calificacion int,
+primary key (nocuenta,mid,semestre)/*Llave primaria compuesta*/
+);
