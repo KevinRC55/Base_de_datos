@@ -1,0 +1,26 @@
+/*
+PRACTICA #4
+
+Una cadena de video-clubs ha decidido tener un istema informatizado 
+para administrar la red las rentas a sus peliculas para sus clientes.
+
+Cada pelicula se caracteriza por un numero identificador, un titulo, 
+la productora que permitio su realizacion, la fecha en la que fue estrenada la pelicula
+asi como su nacionalidad.
+
+De los directores de las peliculas nos interesa saber su nombre, sexo, nacionalidad.
+
+En cuanto a los actores que participan en las peliculas nos interesa saber su nombre, 
+sexo y nacionalidad. Tambien nos interesa saber que en las peliculas hay actores principales
+y actores que no lo son.
+
+y los clientes nos interesa conocer su numero de cliente, datos generales, domicilio, telefono 
+de contacto y correo electronico.
+
+Los clientes rentan ejemplares de peliculas y de cada ejemplar se quiere saber su numero 
+de identificador ademas de su estado de conservacion.
+
+Cada cliente no puede tener al mismo tiempo rentadas mas de cuatro peliculas.
+para poder ser cliente de la cadena de video se requiere cada cliente sea avalado por otro cliente.
+*/
+
