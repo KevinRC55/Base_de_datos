@@ -100,4 +100,21 @@ c.division from materia m join carrera c on m.cid = c.carreraid;
 
 select m.materiaid, m.nombre as materia, m.creditos, c.nombre as carrera,
 c.division from materia m join carrera c on m.cid = c.carreraid;
-where c.nombre = 'Matemticas Aplicadas y Computacion';
+where c.nombre = 'Matematicas Aplicadas y Computacion';
+
+select g.semestre, a.nocuenta, a.nombre, a.sexo, c.nombre as carrera,
+m.nombre as materia from alumno a join carrera c join materia m
+join curso g on a.cid = c.carreraid and m.cid = c.carreraid and
+g.nocuenta = a.nocuenta and g.mid = m.materiaid;
+
+select g.semestre, a.nocuenta, a.nombre, a.sexo, c.nombre as carrera,
+m.nombre as materia from alumno a join carrera c join materia m
+join curso g on a.cid = c.carreraid and m.cid = c.carreraid and
+g.nocuenta = a.nocuenta and g.mid = m.materiaid
+where m.nombre = 'Base de Datos';
+
+select g.semestre, a.nocuenta, a.nombre, a.sexo, c.nombre as carrera,
+m.nombre as materia from alumno a join carrera c join materia m
+join curso g on a.cid = c.carreraid and m.cid = c.carreraid and
+g.nocuenta = a.nocuenta and g.mid = m.materiaid
+where m.nombre = 'Base de Datos' and g.semestre = '2019-2';
