@@ -24,3 +24,108 @@ Cada cliente no puede tener al mismo tiempo rentadas mas de cuatro peliculas.
 para poder ser cliente de la cadena de video se requiere cada cliente sea avalado por otro cliente.
 */
 
+create database ejemplo_04;
+use ejemplo_04;
+
+create table nacionalidad(
+nacionalidadid int primary key,
+descripcion varchar(50)
+);
+
+create table director(
+directorid int primary key,
+nombre varchar(50),
+sexo char,
+nacionalidadid int,
+foreign key (nacionalidadid) references nacionalidad (nacionalidadid)
+);
+
+
+create table actor(
+actorid int primary key,
+nombre varchar(50),
+sexo char,
+nacionalidadid int,
+foreign key (nacionalidadid) references nacionalidad (nacionalidadid)
+);
+
+create table pelicula(
+peliculaid int primary key,
+titulo varchar(35),
+productora varchar(35),
+fecharealizacion date,
+nacionalidadid int,
+foreign key (nacionalidadid) references nacionalidad (nacionalidadid)
+);
+
+create table direccion (
+directorid int,
+foreign key (directorid) references director (directorid),
+peliculaid int,
+foreign key (peliculaid) references pelicula (peliculaid)
+);
+
+create table reparto(
+actorid int,
+foreign key (actorid) references actor (actorid),
+peliculaid int,
+foreign key (peliculaid) references pelicula (peliculaid),
+principal char
+);
+
+create table ejemplar(
+ejemplarid int primary key,
+peliculaid int,
+foreign key (peliculaid) references pelicula (peliculaid),
+estadoconservacion varchar(35)
+);
+
+create table generales(
+generalesid int promary key,
+nombre varchar(25),
+apellidopaterno varchar(25),
+apellidomaterno varchar(25),
+curp varchar(25)
+);
+
+create table domicilio(
+domicilio id int primary key,
+calle varchar(25),
+numero int,
+colonia varchar(-35),
+codigopostal int,
+municipio varchar(25),
+entidad varchar(25)
+);
+
+create table contacto(
+contactoid int primary key,
+telefonocasa varchar(25),
+telefonocelular varchar(25),
+correoelectronico varchar(50)
+);
+
+create table cliente(
+dni int primary key,
+generalesid int,
+foreign key (generalesid) references generales (generalesid),
+domicilio int,
+foreign key (domicilioid) references domicilio (domicilioid),
+contactoid int,
+foreign key (contactoid) references contacto (contactoid),
+dna int,
+foreign key (dna) references cliente (dni)
+);
+
+crete table rentas(
+dni int,
+foreign key (dni) references cliente (dni),
+ejemplarid int,
+foreign key (ejemplarid) references ejemplar (ejemplarid),
+fechaentrega date,
+fechadevolucion date
+);
+
+
+
+
