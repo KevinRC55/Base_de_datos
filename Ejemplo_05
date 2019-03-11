@@ -1,0 +1,38 @@
+/*
+Parques naturales
+
+La secreteraria de medio ambiente ha decidido crear un sistema de información 
+sobre parques naturales gestionados por comunidades autonomas.
+
+Una comunidad puede residir y mantener varios parques, y un parque puede ser
+compartido por varias comunidades.
+
+Cada parque tiene nombre y fecha de declaración como parque, tiene varias areas 
+con un nombre y extensión.
+
+Cada área tiene especies de 3 tipos: animales, minerales o vegetales.
+
+Cada especie tiene una denominacion cientifica, una vulgar, y un número de 
+inventariado de especimenes.
+
+-De los animales, se desea saber su tipo de alimentación y periodo de celo anual.
+-De los vegetales, se desea saber si tienen floración y el periodo si es que tiene.
+-De los minerales, se desea saber si es un cristal o una roca.
+
+Ademas, se desea conocer que especies sirven de alimento a otras teniendo en cuenta
+que un mineral no es alimento y que ningun vegetal se alimenta de otra especie.
+
+Del personal del parque se guarda un DNI, nombre, dirección, telefono (domicilio y movil),
+no. de seguridad social y sueldo. Se tiene  distintos tipos de personal:
+
+-Personal de gestion: registra datos de visitantes al parque para alguna de las puertas 
+al parque(cada puerta tiene un numero)
+-Personal de vigilancia: vigila un area del parque con un vehiculo(tipo y matricula)
+-Personal de conservacion: tiene una profesión y realiza proyectos de investigación 
+sobre una o varias especies (una especie puede ser investigada por varios al mismo tiempo).
+Cada proyecto tiene un presupuesto y un periodo de realización.
+
+Un visitante (DNI, nombre, domicilio, profesión) puede pagar y acudir a las excursiones que 
+organizan para recorres los parques (en vehiculo o a pie) cualquier dia de la semana pero solo 
+a sierta hora
+*/
