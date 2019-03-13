@@ -1,0 +1,15 @@
+create database ejemplo_01;
+
+use ejemplo_01;
+
+create table persona(
+dni int primary key,
+nombre varchar(50),
+domicilio varchar(100),
+telefono varchar(35)
+);
+
+insert infopersona values (1,'Jorge Flores Perez','Calle Alberto J. Pani #23, Cd. Satelite, Naucalpan','11-23-33-44'
+);
+
+select *from persona;
