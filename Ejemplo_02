@@ -1,0 +1,96 @@
+create database ejemplo_02;
+
+use ejemplo_02;
+
+create table generales(
+gid int primary key,
+nombre varchar(25),
+ap1 varchar(25),
+ap2 varchar(25),
+sexo char
+);
+
+create table domicilio(
+did int primary key,
+calle varchar(25),
+numero int,
+colonia varchar(25),
+cp int,
+municipio varchar(25),
+entidad varchar(25)
+);
+
+create table persona(
+dni int primary key,
+gid int,
+foreign key (gid) references generales (gid),
+did int,
+foreign key (did) references domicilio (did),
+curp varchar(25) unique
+);
+
+create table telefonos(
+tid int primary key,
+numero varchar(35),
+descripcion varchar(25),
+dni int,
+foreign key (dni) references persona (dni)
+);
+
+insert into generales values(
+1,'Nombre-01','Ap1-01','Ap2-01','M');
+ insert into generales values(
+2,'Nombre-02','Ap1-02','Ap2-02','M');
+insert into generales values(
+3,'Nombre-03','Ap1-03','Ap2-03','F');
+
+select *from generales;
+
+insert into domicilio values(
+1,'Calle-01',101,'Colonia-01',1001,'Municipio-01','Entidad-01');
+insert into domicilio values(
+2,'Calle-02',202,'Colonia-02',2002,'Municipio-02','Entidad-02');
+insert into domicilio values(
+3,'Calle-03',303,'Colonia-03',3003,'Municipio-03','Entidad-03');
+
+select *from domicilio;
+
+insert into persona values(
+1,1,1,'CURP-01');
+insert into persona values(
+2,2,2,'CURP-02');
+insert into persona values(
+3,3,3,'CURP-03');
+
+select *from persona;
+
+select persona.dni, generales.nombre, generales.ap1, generales.ap2,
+generales.sexo, persona.curp from generales join persona on persona.gid = generales.gid;
+
+select p.dni, g.nombre, g.ap1, g.ap2, g.sexo, p.curp
+from generales g join persona p on p.gid=g.gid; 
+
+select p.dni, g.nombre, g.ap1 as appellido_paterno, g.ap2 as apellido_materno,
+g.sexo, p.curp from generales g, persona p where p.gid = g.gid;
+
+select p.dni, g.nombre, g.ap1 as apellido_paterno, g.ap2 as apellido_materno,
+g.sexo, p.curp, d.calle, d.numero, d.colonia, d.cp, d.municipio, d.entidad 
+from generales g join persona p join domicilio d on p.gid = g.gid and p.did = d.did;
+
+select p.dni, g.nombre, g.ap1 as apellido_paterno, g.ap2 as apellido_materno,
+g.sexo, p.curp, d.calle, d.numero, d.colonia, d.cp, d.municipio, d.entidad 
+from generales g join persona p join domicilio d on p.gid=g.gid and p.did=d.did
+and g.sexo='F';
+
+insert into telefonos values (1,'11-22-33-44','Tel-Casa',1);
+insert into telefonos values (2,'22-33-44-55','Tel-Casa',2);
+insert into telefonos values (3,'33-44-55-66','Tel-Celular',2);
+insert into telefonos values (4,'44-55-66-77','Tel-Casa',3);
+insert into telefonos values (5,'55-66-77-88','Tel-Celular',3);
+insert into telefonos values (6,'66-77-88-99','Tel-Trabajo',3);
+
+select *from telefonos;
+
+select p.dni, g.nombre, g.ap1 as apellido_paterno, g.ap2 as apellido_materno,
+g.sexo, p.curp, t.numero, t.descripcion from generales g, persona p,
+telefonos t where p.gid = g.gid and p.dni = t.dni;
