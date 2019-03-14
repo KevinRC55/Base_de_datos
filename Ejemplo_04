@@ -25,6 +25,7 @@ para poder ser cliente de la cadena de video se requiere cada cliente sea avalad
 */
 
 create database ejemplo_04;
+
 use ejemplo_04;
 
 create table nacionalidad(
@@ -81,7 +82,7 @@ estadoconservacion varchar(35)
 );
 
 create table generales(
-generalesid int promary key,
+generalesid int primary key,
 nombre varchar(25),
 apellidopaterno varchar(25),
 apellidomaterno varchar(25),
@@ -89,10 +90,10 @@ curp varchar(25)
 );
 
 create table domicilio(
-domicilio id int primary key,
+domicilioid int primary key,
 calle varchar(25),
 numero int,
-colonia varchar(-35),
+colonia varchar(35),
 codigopostal int,
 municipio varchar(25),
 entidad varchar(25)
@@ -109,7 +110,7 @@ create table cliente(
 dni int primary key,
 generalesid int,
 foreign key (generalesid) references generales (generalesid),
-domicilio int,
+domicilioid int,
 foreign key (domicilioid) references domicilio (domicilioid),
 contactoid int,
 foreign key (contactoid) references contacto (contactoid),
@@ -117,7 +118,7 @@ dna int,
 foreign key (dna) references cliente (dni)
 );
 
-crete table rentas(
+create table rentas(
 dni int,
 foreign key (dni) references cliente (dni),
 ejemplarid int,
@@ -125,7 +126,3 @@ foreign key (ejemplarid) references ejemplar (ejemplarid),
 fechaentrega date,
 fechadevolucion date
 );
-
-
-
-
