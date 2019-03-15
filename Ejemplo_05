@@ -36,3 +36,146 @@ Un visitante (DNI, nombre, domicilio, profesión) puede pagar y acudir a las exc
 organizan para recorres los parques (en vehiculo o a pie) cualquier dia de la semana pero solo 
 a sierta hora
 */
+
+create table area(
+id_area int primary key,
+nombre varchar(50),
+extension float,
+id_parque int,
+foreign key (id_parque) references parque (id_parque)
+);
+
+create table especie(
+id_especie int primary key,
+nombrecientifico varchar(50),
+nombrevulgar varchar(50)
+);
+
+create table residente(
+id_area int,
+foreign key(id_area) references area (id_area),
+id_especie int,
+foreign key (id_especie) references especie (id_especie),
+numeroindividuos int
+);
+
+create table animal(
+id_especie in,
+foreign key (id_especie) references especie (id_especie),
+tipoalimentacion varchar(25),
+periododecelo varchar(75),
+primary key (id_especie)
+);
+
+create table alimento(
+id_especie int,
+foreign key (id_especie) references animal (id_especie),
+id_alimento int,
+foreign key (id_alimento) references especie (id_especie),
+periodofloracion varchar(100),
+primary key (id_especie, id_alimento)
+);
+
+create table vegetal(
+id_especie int,
+foreign key (id_especie) references especie (id_especie),
+periodofloracion varchar(100)
+);
+
+crete table mineral(
+id_especie int,
+foreign key (id_especie) references especie (id_especie),
+tipomineral varchar(50)
+);
+
+create table generales(
+id_generales int primary key,
+nombre varchar(50),
+apellidopaterno varchar(25),
+apellidomaterno varchar(25),
+sexo char
+);
+
+create table domicilio(
+id_domicilio int primary key,
+calle varchar(25),
+
+
+create table contacto(
+id_contacto int primary key,
+telefonocasa varchar(25),
+telefonomovil varchar(25),
+email varchar(50)
+);
+
+create table personal(
+dni int primary key,
+id_generales int,
+foreign key (id_generales) references generales (id_generales),
+id_domicilio int,
+foreign key (id_domicilio) references domicilio (id_domicilio),
+id_contacto int,
+foreign key (id_contacto) references contacto (id_contacto),
+numeroseguridadsocial int,
+sueldo float
+);
+
+create table gestion(
+dni int,
+fereign key (dni) references persona (dni),
+numeropuerta int,
+id_area int,
+foreign key (id_area) references area (id_area)
+);
+
+create table vigilacia(
+dni int,
+foreign key (dni) references personal (dni),
+vehiculotipo varchar(25),
+vehiculomatricula varchar(25),
+id_area int,
+foreign key (id_area) references area (id_area),
+);
+
+create table conservacion (
+dni int,
+foreign key (dni) references persona (dni),
+especialidad varchar(50),
+id_area int,
+foreign key (id_area) references area (id_area)
+);
+
+create table investigacion(
+dni int,
+foreign key (dni) references persona (dni),
+profesion varchar(50),
+primary key(dni)
+);
+
+create table proyecto(
+codigo varchar(10) primary key,
+dni int,
+foreign key (dni) references investigacion (dni),
+id_especie int,
+foreign key (id_especie) references especie (id_especie),
+fechainicio date,
+fechafinal date,
+presupuesto float
+);
+
+create table visitante(
+dni int primary key,
+nombrecompleto varchar(50),
+domiciliocompleto varchar(50),
+profesion  varchar(50)
+);
+
+create table excursion(
+id_parque int,
+foreign key (id_parque) references parque (id_parque),
+dni int,
+foreign key (dni) references visitante (dni),
+tipoexcursion varchar(25),
+fecha date
+);
+
