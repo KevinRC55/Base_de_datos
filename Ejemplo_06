@@ -1,0 +1,33 @@
+/*
+En el gimnasio "Siempre en forma" se quiere implementar una base de datos para llevar el control de los 
+socios, recursos utilizados, etc.
+
+Las espicificaciones son las siguientes:
+
+Existen varias salas, de las cueles se quiere guardar informacion como, los metros cuadradados que ocupa,
+ubicación y el tipo de sala (cardio, general, muscular).
+
+Cada sala se identifica con un número de sala.
+
+De cada aparato se quiere tener almecenado su código, descripción y estado de conservación.
+
+Cada aparato está asignado a una unica sala.
+
+También se quiere meter información relacionada con las clases (descripción y día/hora en las que se imparten).
+
+Cada clase se identifica por un codigo de clase.
+
+Cada clase tiene asignada una sala y es impartida por un solo monitor.
+
+De cada monitor se quiere conocer el dni, nombre, telefono, si tienen o no titulación, experiencia profesional,
+así como las clases que pueden impartir (preparación como monitor de aerobics, streching, etc).
+
+De cada socio se quiere conocer el número de socio, nombre, dirección, teléfono, profesión y datos bancarios,
+así como las clases a las que asiste.
+
+El gimnasio dispone también de pistas de squash, de las que se quiere conocer el número de pista, ubicación 
+y estado.
+
+Las pistas de squash pueden ser utilizadas por socios para lo que proporciona un servicio de reservas de pistas
+(en una fecha y hora determinada).
+*/
