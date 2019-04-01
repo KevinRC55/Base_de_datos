@@ -1,0 +1,33 @@
+/*
+La asociación de "Amigos de la Fiesta" desea tener en una base de datos toda la información acerca de las corridas 
+de toros que se celebran en México y de todos los datos relacionados con ella.
+
+Se desea tener información acerca de cada corrida, identificada conjuntamente por un número de rden, la feria en la que 
+se desea guardar se dni, nombre, apodo y la fecha en que tomó la alternativa.
+
+Ademas se desea saber quién fue el trero (padrino) que le dio la alternativa en su día (un torero puede dar la alternativa
+a varios toreros o a ninguno)
+
+En cada corrida un torero obtiene una serie de premios (número de orejas, de rabos y si salió por la puerta grande)
+de los que se desea mantener información.
+
+Cada torero puede tener un apoderado. A su vez, un apoderado lo puede ser de varios toreros.
+
+Del apoderado se desea saber su dni, nombre, dirección y teléfono.
+
+Una corrida se celebra en una plaza de toros de la que se desea saber su nombre (que se supone único), localidad, dirección
+y aforo (en una misma plaza se pueden celebrar varias corridas de toros)
+
+Cada toro pertenece a una ganadería determinada.
+
+De cada ganadería se quiere conocer su código, nombre, localidad, procedencia y antigüedad (año de su creación).
+
+En cada corrida cada toro viene identificado por el código de la ganadería a la que pertenece, el año en que nació y un 
+número de orden.
+
+Además se desa mantener información acerca de su nombre y color, así como del orden en que fue toreado.
+*/
+
+
+
+
