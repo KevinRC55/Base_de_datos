@@ -1,0 +1,16 @@
+La empresa de formación X desea llevar un control informatizado de los recursos que imparte así como de los profesores
+que participan en dichos cursos.
+
+Para ello nos han dado las siguientes especificaciones:
+
+De cada curso se desea conocer el titulo, el número de horas y el tema o los temas que trata, tambien se identifican por un
+código de curso.
+
+Cada curso puede tener una serie de cursos cuya realización previa es obligatoria (prerrequisito) o recomendada.
+
+Cada curso se puede impartir una o varias veces, en diferentes fechas y en cada edición del mismo pueden participar diferentes
+empleados.
+
+Los empleados, de los que se desea onocer su código de empleado, nombre y fecha de antiguedad en la empresa, pueden impartir y
+recibir cursos pero con la restricción de que en una misma edición de un curso no pueden participar como profesres y como 
+alumnos.
