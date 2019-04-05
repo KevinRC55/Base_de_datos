@@ -1,1 +1,40 @@
+create database ejemplo_07;
 
+use ejemplo_07;
+
+create table marcas (
+id int primary key,
+nombre varchar(35)
+);
+
+insert into marcas values (1,'Disney');
+insert into marcas values (2,'Warner Brothers');
+insert into marcas values (3,'Patito S.A');
+insert into marcas values (4,'Peluches S.A.');
+insert into marcas values (5,'The toys');
+
+create table muniecos (
+id int primary key,
+nombre varchar(35),
+descripcion varchar(35),
+precio float,
+exixstencia int,
+idmarca int,
+foreign key (idmarca) references marcas (id)
+);
+
+insert into muniecos values (1,'Perrito','Perrito de peluche cariñoso',230,5,1);
+insert into muniecos values (2,'Periquito','Periquito que habla',325,3,4);
+insert into muniecos values (3,'Gatito','Gato de peluche tierno',125,9,3);
+insert into muniecos values (4,'Osito','Osito de peluche, el tradicional',245,8,null);
+insert into muniecos values (5,'Chaguito','Changuito que se rasca',195,3,3);
+insert into muniecos values (6,'Caballito','Caballo de peluche con sonidos',305,2,4);
+insert into muniecos values (7,'Ardillita','Ardillita con una nuez en las manos',140,3,null);
+insert into muniecos values (8,'Canguro','Canguro jugueton',235,0,4);
+insert into muniecos values (9,'Gallinita','Gallinita de babeza blanca',210,3,1);
+insert into muniecos values (10,'Raton','Raton de cuerda',280,2,3);
+insert into muniecos values (11,'Elefantito','Robot elefantito que camina',420,6,null);
+insert into muniecos values (12,'Leoncito','Leoncito con sonidos',140,1,null);
+insert into muniecos values (13,'Foca','Foca de circo de peluche',200,2,1);
+insert into muniecos values (14,'Pelota','Pelota de peluche',110,15,3);
+insert into muniecos values (15,'Panda','Osito panda de peluche',320,2,4);
