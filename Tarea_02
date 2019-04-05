@@ -1,0 +1,24 @@
+Una escuela quire generar un sistema para tener controlado en una base de datos todo lo referente a los trabajos de 
+fin de carrera (T.F.C)
+
+Los alumnos se definen por su número de matricula, nombre y domicilio. Un alumno realiza solo un T.F.C
+
+Los T.FC se definen por un número de orden, por su tema y por la feca de comienzo del mismo trabajo.
+
+Un T.F.C determinado no puede ser realizado por varios alumnos.
+
+Un profesor se define por su DNI, nombre y domicilio; nos interesa conocer a que alumno dirige el T.F.C
+
+Un tribunal está formado por varios profesores (3) y los profesores pueden formar parte de varios tribunales.
+
+Es de interes para el tribual conocer qué alumno es el que se presenta, con que T.F.C y en que semestre se ha realizado el
+trabajo.
+
+El tribunal se define por un numero de tribunal, por sus integrantes y por el lugar del examen.
+
+Un alumno puede haber petenecido a algún grupo de investigacón del que haya surgido la idea del T.F.C
+
+Dichos grupos se identifican por un número de grupo, por su nombre y por su número de grupo, por su nombre y por su número 
+de integrantes.
+
+Un alumno no puede pertenecer a más de un grupo y es de intéres la fecha de incorporación al grupo.
