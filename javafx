@@ -1,0 +1,15 @@
+Elaborar una aplicacion de escritorio con java swing que nos permita construir una tabla de empleados
+a partir de una lista de empleados.
+
+MyFrame.java
+Employee.java
+
+
+Table1 = now javax.swing.JTable
+
+construirtabla
+
+/*MyFrame.java*/
+
+
+http://senajavafx.blogspot.com/2012/08/operacion-base-de-datos-y-javafx-data.html
